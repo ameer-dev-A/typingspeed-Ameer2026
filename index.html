@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Frontend Mentor | Typing Speed Test</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    button{
+      cursor: pointer;
+    }
+     .attribution { font-size: 11px; 
+                    width: 100%; 
+                    text-align: center;
+                   /* transform: translateX(75%) translateY(20px);   */
+                  }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    body{
+      background-color: black;
+      height: 110vh;
+      color: white; 
+    }
+    .all{
+      width: 70%;
+      margin:0 auto
+       }
+    .headof{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      padding: 10px;
+    }
+    .headone{
+      display: flex;
+    }
+    .headtext{
+      margin: 5px;
+    }
+    .headtext p{
+      margin-top: -15px;
+    }
+    svg .svg1{
+      margin-top: 25px;
+    }
+    .headtwo{
+     margin:15px;
+     display: flex;
+      align-items: center;
+    gap: 6px;
+    }
+    .headtwo p{
+      margin-top: 20px;
+      padding: 5px;
+    }
+
+    @media(max-width:850px){
+      .headtext{display: none;}
+      .all{width: 100%;}   
+       .yellowstar{
+
+           left: -150px;
+           top:450px
+     }
+   
+    }
+    .part0022{flex-direction: column;} 
+  
+    .dat{height: 800px;}
+      .part02{
+      width: 100%;
+      height: 70vh;
+      position: relative;
+     }
+   
+     .part033,.part022,.part044{
+      z-index: 1000;
+      position: absolute;
+       width: 100%;
+      height: 70vh;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      backdrop-filter: blur(90px);
+      display:none;
+     }
+ 
+     .green1{
+      border: 10px solid rgb(60, 75, 60);
+      border-radius: 150px;
+     }
+     .green2{
+      border: 8px solid rgb(38, 116, 38);
+      border-radius: 150px;
+     }
+     .flexo{
+      width: 100%;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;      
+     }
+     .part0022{
+      display: flex;
+     }
+     .redstar{
+      position: absolute;
+       top: 200px;
+           left: 350px;
+      transform:translateX(-300px) translatey(-150px);
+     }
+     .yellowstar{
+      
+          position: absolute;
+           transform:translateX(350px) translatey(50px);
+     }
+     .part0022 p{
+         border: 1px solid rgb(118, 95, 95);
+         color: rgb(188, 178, 178);
+         width: 120px;
+         height: auto;
+         margin: 10px;
+         padding: 10px;
+     }
+     .beat,.beat4 ,
+     .beat3{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10rem;
+      height:auto;
+      padding: 7px;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      border-radius: 10px;
+      font-weight: bold;
+     }
+    .part2{
+      display:grid;
+      grid-template-columns: auto 1fr auto;
+      padding: 10px;
+    }
+   
+    .part22{
+      display: flex;
+    }
+    .part22 p:nth-child(2) {
+        border-left: 1px solid rgb(118, 95, 95);
+        border-right: 1px solid rgb(118, 95, 95);
+        padding-left: 15px;
+         padding-right: 10px;
+    }
+     .part22 p:nth-child(3) {
+        margin-left: 10px;
+     }
+    .part22 p{
+      width: 110px;
+    }
+    .part33{
+      display: flex;
+    }
+    button{
+      background-color: black;
+      color: white;
+      width: 70px;
+      height: 25px;
+      padding: 3px;
+      margin: 5px;
+      margin-top: 15px;
+      border: 2px solid rgb(118, 95, 95);
+    }
+    p{
+     color: #7f5d5d; 
+    }
+  .part44{
+    display: flex;
+    margin-left: 60px;
+      width: 100%;
+    }
+     #min{
+      width: 100px;
+    }
+   
+    .min,.pass ,.easy,.mid,.hard{
+       border: 2px solid hsl(210, 100%, 65%);
+       color: hsl(210, 100%, 65%);
+    }
+    #min:hover ,#pass:hover , #easy:hover, #mid:hover, #hard:hover{
+            border: 2px solid hsl(210, 100%, 65%);
+            color: hsl(210, 100%, 65%);
+    }
+    select{
+      width: 150px;
+      display: none;
+      background-color: black;
+      color: white;
+      text-align: center;
+      margin: 2px;
+    }
+    
+    @media(max-width:1200px){
+      /* .dat{height: 100px;} */
+      .part2{
+      display:grid;
+      grid-template-columns: auto auto;
+      padding: 10px;
+    }
+    .part22{grid-column:1/3;justify-self: center;}
+    .part33 ,.part44{display: none;}
+    select{display:block;}
+   }
+    .dat{
+      position: relative;
+      width: 100%;
+      height: 300px;      
+    }
+    .data-level{
+      padding: 5px;
+      font-size: 20px;
+      position: absolute;
+      width:100%;
+      height: 300px;
+      background:transparent;
+      color: #7f5d5d;
+      border: none;
+    }
+ 
+    .type{border: none;
+      color: transparent;
+      font-size: 20px;
+      background: transparent;
+      position: absolute;
+      width:100%;
+      height: 300px;
+    }
+    .data-level,.type{
+    font-family:monospace;
+    line-height:1.6;
+    padding:10px;
+    white-space:pre-wrap;
+    word-break:break-word;
+    box-sizing:border-box;
+    }            
+    .type-under{
+  text-decoration: underline;
+  text-decoration-color: red;
+  color: red;
+  text-decoration-thickness:2px ;
+}
+.type-under2{
+  color: rgb(66, 232, 66);
+}
+    .started{
+        display:flex;
+        flex-direction: column;  
+       justify-content:center;
+       align-items:center;
+       gap:0px;
+      padding: 5px;
+      font-size: 20px;
+      position: absolute;
+      width:100%;
+      height: 300px;
+      backdrop-filter: blur(2px);
+    }
+    .startedapp{
+      display:flex;
+      align-items:center;
+      width:auto;
+      padding: 20px;
+      background-color: hsl(214, 100%, 55%);
+      border: none;
+      border-radius: 5px;
+      color: hsl(0, 0%, 82%)
+    }
+    .startedapp:focus{
+          outline: 2px solid hsl(240, 1%, 59%);
+          outline-offset: 3px;
+    }
+    .startedapp:hover{
+      color: white;
+       background-color: hsl(210, 100%, 65%)
+    }
+    .started h5{
+      margin: 0;
+      padding: 5px;
+      background-color: hsl(0, 0%, 15%)
+    }
+    .type:focus{
+      outline: none;
+    }
+    span.time{
+      color: hsl(49, 85%, 70%);
+      font-size: large;
+    }
+
+    span.acc{
+      color: hsl(354, 63%, 57%);
+      font-size: large;
+    }
+        span.best, span.wpm{
+      color: hsl(0, 0%, 100%);
+      font-size: large;
+    }
+    div.res{
+     display: flex;justify-content: center;
+    }
+    button.restart{
+     text-align: center;
+     background-color: hsl(0, 0%, 15%);
+     border-style: none;
+    }
+
+    span.correct{
+      font-weight: bold;
+      color: hsl(140, 63%, 57%)
+    }
+    span.uncorrect{
+      font-weight: bold;
+      color: hsl(354, 63%, 57%);
+    }
+    .wpm2{
+      color: hsl(0, 0%, 100%);
+      font-weight: bold;
+    }
+    .acc2{
+      font-weight: bold;
+      color: hsl(354, 63%, 57%);
+    }
+     span.correct3,span.correct4{
+      font-weight: bold;
+      color: hsl(140, 63%, 57%)
+    }
+    span.uncorrect3,span.uncorrector{
+      font-weight: bold;
+      color: hsl(354, 63%, 57%);
+    }
+    .wpm3,.wpm4{
+      color: hsl(0, 0%, 100%);
+      font-weight: bold;
+    }
+    .acc3,.acc4{
+      font-weight: bold;
+      color: hsl(354, 63%, 57%);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="all">
+<div class="headof">
+  <div class="headone">
+     <svg class="svg1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32"><path fill="url(#a)" fill-rule="evenodd" d="M22.827 15.626a1.155 1.155 0 1 1 .001-2.308 1.155 1.155 0 0 1-.001 2.308m-2.279 3.84a1.156 1.156 0 0 1 0-2.31 1.156 1.156 0 0 1 0 2.31m-.784 4.746h-7.526a1 1 0 0 1 0-2h7.526a1 1 0 0 1 0 2m-9.48-5.902a1.156 1.156 0 1 1 1.155 1.156 1.156 1.156 0 0 1-1.155-1.156M9.16 15.626a1.155 1.155 0 1 1 0-2.308 1.155 1.155 0 0 1 0 2.308m4.557-2.31a1.155 1.155 0 1 1 0 2.311 1.155 1.155 0 0 1 0-2.31m2.276 3.84a1.156 1.156 0 0 1 0 2.31 1.156 1.156 0 0 1 0-2.31m2.277-3.84a1.155 1.155 0 1 1-.001 2.311 1.155 1.155 0 0 1 0-2.31m3.369-4.77h-4.447v-.185a3.596 3.596 0 0 0-3.578-3.538H12.27a.67.67 0 0 1-.668-.66 1 1 0 0 0-2 .019 2.67 2.67 0 0 0 2.657 2.641h1.335c.809-.02 1.586.696 1.598 1.552v.171h-4.83c-4.4 0-7.028 2.579-7.028 6.898v6.497c-.007 2.084.618 3.817 1.808 5.01 1.224 1.229 3.024 1.877 5.208 1.877h11.289c4.4 0 7.028-2.574 7.028-6.884v-6.4c0-4.382-2.628-6.998-7.028-6.998" clip-rule="evenodd"/><defs><linearGradient id="a" x1="5.5" x2="32.5" y1="7" y2="38.5" gradientUnits="userSpaceOnUse"><stop stop-color="#4ca6ff"/><stop offset="1" stop-color="#f4dc73"/></linearGradient></defs>
+  </svg>
+  <div class="headtext">
+    <h3>Typing Speed Test</h3>
+    <p>type as fast as you can in 60 seconds</p>
+  </div>
+  </div>
+  <div class="headtwo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18" fill="none" viewBox="0 0 21 18"><path fill="#f4dc73" d="M19.406 2.25c.457 0 .844.387.844.844v1.969c0 1.265-.809 2.566-2.18 3.55-1.125.809-2.46 1.301-3.867 1.477-1.125 1.828-2.39 2.566-2.39 2.566v2.531H13.5c1.23 0 2.25.739 2.25 1.97v.421c0 .246-.21.422-.422.422H4.922a.406.406 0 0 1-.422-.422v-.422c0-1.23.984-1.968 2.25-1.968h1.688v-2.532s-1.301-.738-2.426-2.566c-1.407-.176-2.742-.668-3.867-1.477C.773 7.63 0 6.328 0 5.063v-1.97c0-.456.352-.843.844-.843H4.5V.844C4.5.387 4.852 0 5.344 0h9.562c.457 0 .844.387.844.844V2.25zM3.48 6.785c.422.317.915.563 1.477.774A12.7 12.7 0 0 1 4.5 4.5H2.25v.563c0 .421.352 1.125 1.23 1.722M18 5.062V4.5h-2.285a12.7 12.7 0 0 1-.457 3.059c.562-.211 1.055-.457 1.476-.774C17.367 6.363 18 5.66 18 5.062"/></svg>
+    <p class="pp">Personal best : </p><span class="best"> WPM</span>
+  </div>
+</div>
+<div class="part02">
+<div class="part022">
+
+  <img src="assets\images\pattern-star-2.svg" class="redstar">
+  
+  <div class="flexo">  
+    <div class="green1">
+    <div class="green2">
+          <img src="assets\images\icon-completed.svg" width="40px" height="40px">
+    </div>
+  </div>
+    <h2>Baseline Estabilshed !</h2>
+    <h5 style="color: hsl(240, 3%, 46%);">You've set the bar.Now the real challenge begins-time to beat it.</h5>
+     <div class="part0022">
+  <p>WPM : <span class="wpm2"></span></p>
+  <p>Accuracy: <span class="acc2" ></span></p>
+  <p>Charecters: <span class="charecters">
+    <span class="correct"></span>
+    <span class="uncorrect"></span>
+  </span></p>
+</div>
+   <button class="beat">beat this score <img src="assets\images\icon-restart.svg" 
+    style="padding: 4px;width: 15px;
+    ;background-color: black;
+     border-radius: 20px;margin-left: 6px;"></button>
+  </div>
+    <img src="assets\images\pattern-star-1.svg" class="yellowstar">
+</div>
+<div class="part033">
+  <div class="flexo">  
+    <div >
+    <div >
+          <img src="assets\images\icon-new-pb.svg" width="40px" height="40px">
+    </div>
+  </div>
+    <h2>Hight Score Smashed</h2>
+    <h5 style="color: hsl(240, 3%, 46%);">You're getting faster. That was icredible typing</h5>
+     <div class="part0022">
+  <p>WPM : <span class="wpm3"></span></p>
+  <p>Accuracy: <span class="acc3" ></span></p>
+  <p>Charecters: <span class="charecters3">
+    <span class="correct3"></span>
+    <span class="uncorrect3"></span>
+  </span></p>
+</div>
+   <button class="beat3" >beat this score <img src="assets\images\icon-restart.svg" 
+   style="padding: 4px;width: 15px;background-color: black;
+     border-radius: 20px;margin-left: 6px;"></button>
+  </div>
+    <img src="assets\images\pattern-confetti.svg" class="conf">
+</div>
+<div class="part044">
+  <img src="assets\images\pattern-star-2.svg" class="redstar">
+   <div class="flexo">  
+    <div class="green1">
+    <div class="green2">
+          <img src="assets\images\icon-completed.svg" width="40px" height="40px">
+    </div>
+  </div>
+    <h2>Test Complete!</h2>
+    <h5 style="color: hsl(240, 3%, 46%);">Solid run. Keep pushing to beat your high score.</h5>
+     <div class="part0022">
+  <p>WPM : <span class="wpm4"></span></p>
+  <p>Accuracy: <span class="acc4" ></span></p>
+  <p>Charecters: <span class="charecters4">
+    <span class="correct4"></span>
+    <span class="uncorrect4"></span>
+  </span></p>
+</div>
+   <button class="beat4">Go Again <img src="assets\images\icon-restart.svg" 
+    style="padding: 4px;width: 15px;
+    ;background-color: black;
+     border-radius: 20px;margin-left: 6px;"></button>
+  </div>
+    <img src="assets\images\pattern-star-1.svg" class="yellowstar">
+</div>
+<div class="part2">
+  <div class="part22">
+  <p>WPM : <span class="wpm"></span></p>
+  <p>Accuracy: <span class="acc"></span></p>
+  <p>Time: <span class="time"></span></p>
+</div>
+<div class="part33">
+  <div class="dif"><p>Difficulty: </p></div>
+  <button id="easy" class="easy" onclick="randomeasy()">Easy</button>
+  <button id="mid" class="mid" onclick="randommid()">Medium</button>
+  <button id="hard" class="hard" onclick="randomhard()">Hard</button>
+</div> 
+
+<div class="part44">
+  <div class="mode"><p> Mode: </p></div> 
+  <button  id="min" class="min">Timed (60s)</button>
+  <button  id="pass" class="pass">Passage</button>
+  </div> 
+  <select id="select1">
+  <option value="easy"  class="easyy" onclick="randomeasy()">Easy</option>
+  <option value="mid"  class="midd" onclick="randommid()">Medium</option>
+  <option value="hard"  class="hardd" onclick="randomhard()">Hard</option>
+  </select>  
+  <select id="select2">
+  <option value="min"  class="minn">Timed (60s)</option>
+  <option value="pass"  class="passs">Passage</option>
+  </select>
+
+</div>
+
+
+<hr>
+<div class="dat">
+<div class="data-level" readonly></div>
+<div class="type" contenteditable="true"></div>
+<div class="started">
+  <button class="startedapp">Start Typing Test</button>
+  <h5>Or click the text and start typing</h5>
+</div>
+</div>
+<hr>
+<div class="res">
+  <button class="restart" onclick="location.reload();">restart 
+  <img src="assets/images/icon-restart.svg" width="13" height="13">
+  </button> 
+</div>
+ 
+<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/ameer-dev-A">Ameer</a>.
+  </div>
+</div>
+</div>
+<script>
+   const type = document.querySelector('.type');
+   const level = document.querySelector('.data-level');
+   let data={};
+    fetch("data.json")
+     .then(response => response.json())
+     .then(json => {
+        data = json;
+      });
+    
+    
+    //------------------started-------------------- 
+      let started = document.querySelector('.started');
+      
+      let startedapp = document.querySelector('.startedapp');
+      startedapp.onclick=()=>{
+         started.style.display='none';
+      }
+
+    //------------------beat-------------------- 
+       let beat = document.querySelector('.beat');
+       let beat3 = document.querySelector('.beat3');
+       let beat4 = document.querySelector('.beat4');
+       let part002 = document.querySelector('.part022');
+       let part003 = document.querySelector('.part033');
+       let part004 = document.querySelector('.part044');
+       let wpm2 = document.querySelector('.wpm2');
+       let acc2 = document.querySelector('.acc2');
+       let Charecters = document.querySelector('.charecters');
+       let wpm3 = document.querySelector('.wpm3');
+       let acc3 = document.querySelector('.acc3');
+       let Charecters3 = document.querySelector('.charecters3');
+       let wpm4 = document.querySelector('.wpm4');
+       let acc4 = document.querySelector('.acc4');
+       let Charecters4 = document.querySelector('.charecters4');
+       
+       beat.onclick=()=>{
+        location.reload();
+        part002.style.display='none';
+       } 
+       beat3.onclick=()=>{
+        location.reload();
+        part003.style.display='none';
+       } 
+        beat4.onclick=()=>{
+        location.reload();
+        part004.style.display='none';
+       } 
+      
+    //------------------time-------------------- 
+        const timer = document.querySelector('.time');
+        const btnmin = document.querySelector('.min');
+        const btnpass = document.querySelector('.pass');
+        let counter = 60;
+        let counter2=0;
+        let counter2m = 0;
+        let interv = null;
+        let tot2 = level.textContent.length;
+        
+      btnmin.onclick =()=>{  
+        btnmin.classList.add('min');
+        btnpass.classList.remove('pass');
+        type.addEventListener('input',()=>{
+            if(interv!==null) return;
+             interv = setInterval(function(){
+                    counter--;
+                    timer.innerHTML = counter;  
+           if(counter === 0 ||
+              type.textContent.length===level.textContent.length){
+                clearInterval(interv);
+               type.contentEditable = "false";
+                finishTest();
+              }
+            },1000)  
+            })
+      }
+btnmin.classList.remove('min');
+
+      btnpass.onclick =()=>{  
+        btnpass.classList.add('pass');
+        btnmin.classList.remove('min');
+        type.addEventListener('input',()=>{
+            if(interv==null){
+             interv =   setInterval(function(){
+                    counter2++;
+                    if(counter2 == 59){
+                      counter2 = 0;
+                      counter2m++;
+                    }
+                    timer.innerHTML =   String(counter2m).padStart(2, "0") +":" +String(counter2).padStart(2, "0");
+            },1000)
+            }
+           if(type.textContent === level.textContent || type.textContent.length===level.textContent.length){
+                    clearInterval(interv); 
+                    interv = null;  
+                    type.contentEditable = "false";
+                     finishTest();
+                    // part002.style.display="flex";     
+                    timer.innerHTML=counter2;
+              }
+            });
+      }
+  btnpass.classList.remove('pass');
+  
+      //------------------level-------------------- 
+        const easy = document.querySelector('.easy');
+        const mid = document.querySelector('.mid');
+        const hard = document.querySelector('.hard');
+    
+           function showtext(text){
+         level.innerHTML = text
+       .split('').map(letter=>`<span>${letter}</span>`)
+       .join('');
+       }
+
+        function randomeasy(){
+           const randomItem =data.easy[Math.floor(Math.random() * data.easy.length)];
+           showtext(randomItem.text);
+        }
+       // Charecters.textContent = randomItem.length;
+                function randommid(){
+           const randomItem =data.medium[Math.floor(Math.random() * data.medium.length)];
+           showtext(randomItem.text);
+        }
+                function randomhard(){
+           const randomItem =data.hard[Math.floor(Math.random() * data.hard.length)];
+           showtext(randomItem.text);
+        }
+
+    easy.onclick = () => {
+    randomeasy();
+    easy.classList.add('easy');
+    mid.classList.remove('mid');
+    hard.classList.remove('hard');
+};
+    easy.classList.remove('easy');
+
+          mid.onclick=()=>{
+            randommid();
+          mid.classList.add('mid');
+          easy.classList.remove('easy');
+          hard.classList.remove('hard');
+        }
+        mid.classList.remove('mid')
+        
+          hard.onclick=()=>{
+            randomhard();
+          hard.classList.add('hard');
+          mid.classList.remove('mid');
+          easy.classList.remove('easy');
+        }
+        hard.classList.remove('hard')
+      // //---------------best-----wpm--------------------------------  
+      
+      const best = document.querySelector('.best');   
+      const wpm = document.querySelector('.wpm');
+
+      let bestwpm =Number(localStorage.getItem('best')) ||0;
+      if (!Number.isFinite(bestwpm)) {
+            bestwpm = 0;
+          }
+      best.textContent = bestwpm;
+
+       function finishTest() { 
+       
+       let currentWpm = Number(wpm.textContent);
+          
+        //  bestwpm = currentWpm;
+        
+if ( bestwpm === 0){
+    bestwpm = currentWpm;
+    part002.style.display = "flex";
+      }
+ else if (currentWpm > bestwpm && bestwpm>0) {
+        bestwpm = currentWpm;
+        part003.style.display = "flex"; 
+        
+    }else if (currentWpm < bestwpm ){
+        part004.style.display = "flex"; 
+    }
+    localStorage.setItem("best", bestwpm);
+        best.textContent = bestwpm;
+  }
+
+       
+    //--------------------accurancy--------------------------------
+      const accur = document.querySelector('.acc');   
+      let totalmistakes=0;
+      type.addEventListener('input',(event)=>{
+        const typ = type.textContent;
+        const lev = level.textContent;
+        let cou = 0;
+      //  let hasError = false;
+           if (event.inputType !== 'deleteContentBackward' && 
+           event.inputType !== 'deleteContentForward') {
+        const currentIndex = typ.length - 1; 
+        // موقع الحرف الذي كُتب للتو
+      
+        // إذا كان الحرف المكتوب لا يطابق الحرف المقابل له في النص الأصلي
+        if (typ[currentIndex] !== lev[currentIndex]) {
+            totalmistakes++; // سجل خطأ تراكمي لا يُمحى بالـ Backspace
+        }
+    }
+      // for(let i=0 ; i < typ.length; i++){
+      //  if(typ[i]=== lev[i]){
+      //   cou++;
+      //  }
+      // };
+
+  //=======charecters=======
+        const spans= document.querySelectorAll('.data-level span');
+        const  typed= type.textContent.split('');
+        let correct=document.querySelector('.correct');
+        let uncorrect=document.querySelector('.uncorrect');
+        let correct3=document.querySelector('.correct3');
+        let uncorrect3=document.querySelector('.uncorrect3');
+        let correct4=document.querySelector('.correct4');
+        let uncorrect4=document.querySelector('.uncorrect4');
+
+        let correcter = 0;
+        let uncorrecter = 0;
+       
+        spans.forEach((span,index)=>{
+            span.classList.remove('type-under','type-under2');
+          if(typed[index]==null)return;
+          if(typed[index]===span.textContent){
+            span.classList.add('type-under2');
+            correcter++;
+          }else{
+             span.classList.add('type-under')
+             uncorrecter++;
+          }
+          correct.textContent=correcter+"/";
+          uncorrect.textContent=uncorrecter;
+          
+
+          correct3.textContent=correcter+"/";
+          uncorrect3.textContent=uncorrecter;
+
+          correct4.textContent=correcter+"/";
+          uncorrect4.textContent=uncorrecter;
+
+        })
+        console.log(typed);
+console.log(
+  [...document.querySelectorAll('.data-level span')].map(s => s.textContent)
+);
+                        // -----best--wpm----------
+
+          const wpmlenght = Math.round(correcter/5);
+          wpm.innerHTML=wpmlenght;
+          wpm2.textContent =wpmlenght ;
+          wpm3.textContent =wpmlenght ;
+           wpm4.textContent =wpmlenght ;
+       
+  // -------------------------------------------------
+  //     if (hasError) {
+  //   type.classList.add('type-under');
+  // } else {
+  //   type.classList.remove('type-under');
+  // }
+      
+      // إجمالي المحاولات = عدد الحروف الصحيحة الحالية + الأخطاء التراكمية التي حدثت
+    const tot = correcter + totalmistakes;
+    let acc =0; // الدقة الافتراضية
+
+    if (tot > 0) {
+        // الدقة = (الحروف الصحيحة الحالية / إجمالي المحاولات) * 100
+        acc = (correcter / tot) * 100;
+    }
+    // const tot = lev.length;
+    //   let acc = 0 ;
+    //   if(tot>0){
+    //   acc = (cou/tot)*100;
+    //   }
+      accur.innerHTML = acc.toFixed(0)+"%";
+      acc2.innerHTML = acc.toFixed(0)+"%";
+      acc3.innerHTML = acc.toFixed(0)+"%";
+      acc4.innerHTML = acc.toFixed(0)+"%";
+     })
+
+    //--------------------small screen--------------------------------
+
+const select = document.getElementById("select1");
+
+select.addEventListener("change", function () {
+    if (this.value === "easy") randomeasy();
+    else if (this.value === "mid") randommid();
+    else randomhard();
+});
+              //------------------time-------------------- 
+const select2 = document.getElementById("select2");
+
+select2.addEventListener("change", function () {
+    if (this.value === "min") btnminf();
+    else btnpassf();
+});   
+      
+        function btnminf(){  
+    btnmin.classList.add("min");
+    btnpass.classList.remove("pass");
+
+    type.oninput = function () {
+        if (interv) return;
+        interv = setInterval(() => {
+            counter--;
+            timer.textContent = counter;
+            if (
+                counter <= 0 ||
+                type.textContent.length >= level.textContent.length
+            ) {
+                clearInterval(interv);
+                interv = null;
+                type.contentEditable = "false";
+                finishTest();
+            }
+
+        }, 1000);
+
+    };
+
+}
+function btnpassf(){
+
+    btnpass.classList.add('pass');
+    btnmin.classList.remove('min');
+
+    type.oninput = function(){
+        if(interv === null){
+            interv = setInterval(function(){
+                counter2++;
+                if(counter2 === 60){
+                    counter2 = 0;
+                    counter2m++;
+                }
+                timer.innerHTML =
+                    String(counter2m).padStart(2,"0") + ":" +
+                    String(counter2).padStart(2,"0");
+            },1000);
+        }
+        if(
+            type.textContent === level.textContent ||
+            type.textContent.length === level.textContent.length
+        ){
+            clearInterval(interv);
+            interv = null;
+            type.contentEditable = "false";
+            finishTest();
+            timer.innerHTML =
+                String(counter2m).padStart(2,"0") +
+                ":" +
+                String(counter2).padStart(2,"0");
+        }
+
+    };
+}
+
+const pp = document.querySelector(".pp");
+
+function updateBestText() {
+    pp.textContent = window.innerWidth < 600
+        ? "Best :"
+        : "Personal best :";
+}
+
+updateBestText(); // عند تحميل الصفحة
+window.addEventListener("resize", updateBestText); 
+</script>
+ 
+  
+</body>
+</html>
