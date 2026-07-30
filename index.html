@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Frontend Mentor | Typing Speed Test</title>
+
+<link rel="stylesheet" href="typingspeedcss.css">  
+</head>
+<body>
+  <div class="all">
+<div class="headof">
+  <div class="headone">
+     <svg class="svg1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32"><path fill="url(#a)" fill-rule="evenodd" d="M22.827 15.626a1.155 1.155 0 1 1 .001-2.308 1.155 1.155 0 0 1-.001 2.308m-2.279 3.84a1.156 1.156 0 0 1 0-2.31 1.156 1.156 0 0 1 0 2.31m-.784 4.746h-7.526a1 1 0 0 1 0-2h7.526a1 1 0 0 1 0 2m-9.48-5.902a1.156 1.156 0 1 1 1.155 1.156 1.156 1.156 0 0 1-1.155-1.156M9.16 15.626a1.155 1.155 0 1 1 0-2.308 1.155 1.155 0 0 1 0 2.308m4.557-2.31a1.155 1.155 0 1 1 0 2.311 1.155 1.155 0 0 1 0-2.31m2.276 3.84a1.156 1.156 0 0 1 0 2.31 1.156 1.156 0 0 1 0-2.31m2.277-3.84a1.155 1.155 0 1 1-.001 2.311 1.155 1.155 0 0 1 0-2.31m3.369-4.77h-4.447v-.185a3.596 3.596 0 0 0-3.578-3.538H12.27a.67.67 0 0 1-.668-.66 1 1 0 0 0-2 .019 2.67 2.67 0 0 0 2.657 2.641h1.335c.809-.02 1.586.696 1.598 1.552v.171h-4.83c-4.4 0-7.028 2.579-7.028 6.898v6.497c-.007 2.084.618 3.817 1.808 5.01 1.224 1.229 3.024 1.877 5.208 1.877h11.289c4.4 0 7.028-2.574 7.028-6.884v-6.4c0-4.382-2.628-6.998-7.028-6.998" clip-rule="evenodd"/><defs><linearGradient id="a" x1="5.5" x2="32.5" y1="7" y2="38.5" gradientUnits="userSpaceOnUse"><stop stop-color="#4ca6ff"/><stop offset="1" stop-color="#f4dc73"/></linearGradient></defs>
+  </svg>
+  <div class="headtext">
+    <h3>Typing Speed Test</h3>
+    <p>type as fast as you can in 60 seconds</p>
+  </div>
+  </div>
+  <div class="headtwo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18" fill="none" viewBox="0 0 21 18"><path fill="#f4dc73" d="M19.406 2.25c.457 0 .844.387.844.844v1.969c0 1.265-.809 2.566-2.18 3.55-1.125.809-2.46 1.301-3.867 1.477-1.125 1.828-2.39 2.566-2.39 2.566v2.531H13.5c1.23 0 2.25.739 2.25 1.97v.421c0 .246-.21.422-.422.422H4.922a.406.406 0 0 1-.422-.422v-.422c0-1.23.984-1.968 2.25-1.968h1.688v-2.532s-1.301-.738-2.426-2.566c-1.407-.176-2.742-.668-3.867-1.477C.773 7.63 0 6.328 0 5.063v-1.97c0-.456.352-.843.844-.843H4.5V.844C4.5.387 4.852 0 5.344 0h9.562c.457 0 .844.387.844.844V2.25zM3.48 6.785c.422.317.915.563 1.477.774A12.7 12.7 0 0 1 4.5 4.5H2.25v.563c0 .421.352 1.125 1.23 1.722M18 5.062V4.5h-2.285a12.7 12.7 0 0 1-.457 3.059c.562-.211 1.055-.457 1.476-.774C17.367 6.363 18 5.66 18 5.062"/></svg>
+    <p class="pp">Personal best : </p><span class="best"> WPM</span>
+  </div>
+</div>
+<div class="part02">
+<div class="part022">
+
+  <img src="assets\images\pattern-star-2.svg" class="redstar">
+  
+  <div class="flexo">  
+    <div class="green1">
+    <div class="green2">
+          <img src="assets\images\icon-completed.svg" width="40px" height="40px">
+    </div>
+  </div>
+    <h2>Baseline Estabilshed !</h2>
+    <h5 style="color: hsl(240, 3%, 46%);">You've set the bar.Now the real challenge begins-time to beat it.</h5>
+     <div class="part0022">
+  <p>WPM : <span class="wpm2"></span></p>
+  <p>Accuracy: <span class="acc2" ></span></p>
+  <p>Charecters: <span class="charecters">
+    <span class="correct"></span>
+    <span class="uncorrect"></span>
+  </span></p>
+</div>
+   <button class="beat">beat this score <img src="assets\images\icon-restart.svg" 
+    style="padding: 4px;width: 15px;
+    ;background-color: black;
+     border-radius: 20px;margin-left: 6px;"></button>
+  </div>
+    <img src="assets\images\pattern-star-1.svg" class="yellowstar">
+</div>
+<div class="part033">
+  <div class="flexo">  
+    <div >
+    <div >
+          <img src="assets\images\icon-new-pb.svg" width="40px" height="40px">
+    </div>
+  </div>
+    <h2>Hight Score Smashed</h2>
+    <h5 style="color: hsl(240, 3%, 46%);">You're getting faster. That was icredible typing</h5>
+     <div class="part0022">
+  <p>WPM : <span class="wpm3"></span></p>
+  <p>Accuracy: <span class="acc3" ></span></p>
+  <p>Charecters: <span class="charecters3">
+    <span class="correct3"></span>
+    <span class="uncorrect3"></span>
+  </span></p>
+</div>
+   <button class="beat3" >beat this score <img src="assets\images\icon-restart.svg" 
+   style="padding: 4px;width: 15px;background-color: black;
+     border-radius: 20px;margin-left: 6px;"></button>
+  </div>
+    <img src="assets\images\pattern-confetti.svg" class="conf">
+</div>
+<div class="part044">
+  <img src="assets\images\pattern-star-2.svg" class="redstar">
+   <div class="flexo">  
+    <div class="green1">
+    <div class="green2">
+          <img src="assets\images\icon-completed.svg" width="40px" height="40px">
+    </div>
+  </div>
+    <h2>Test Complete!</h2>
+    <h5 style="color: hsl(240, 3%, 46%);">Solid run. Keep pushing to beat your high score.</h5>
+     <div class="part0022">
+  <p>WPM : <span class="wpm4"></span></p>
+  <p>Accuracy: <span class="acc4" ></span></p>
+  <p>Charecters: <span class="charecters4">
+    <span class="correct4"></span>
+    <span class="uncorrect4"></span>
+  </span></p>
+</div>
+   <button class="beat4">Go Again <img src="assets\images\icon-restart.svg" 
+    style="padding: 4px;width: 15px;
+    ;background-color: black;
+     border-radius: 20px;margin-left: 6px;"></button>
+  </div>
+    <img src="assets\images\pattern-star-1.svg" class="yellowstar">
+</div>
+<div class="part2">
+  <div class="part22">
+  <p>WPM : <span class="wpm"></span></p>
+  <p>Accuracy: <span class="acc"></span></p>
+  <p>Time: <span class="time"></span></p>
+</div>
+<div class="part33">
+  <div class="dif"><p>Difficulty: </p></div>
+  <button id="easy" class="easy" onclick="randomeasy()">Easy</button>
+  <button id="mid" class="mid" onclick="randommid()">Medium</button>
+  <button id="hard" class="hard" onclick="randomhard()">Hard</button>
+</div> 
+
+<div class="part44">
+  <div class="mode"><p> Mode: </p></div> 
+  <button  id="min" class="min">Timed (60s)</button>
+  <button  id="pass" class="pass">Passage</button>
+  </div> 
+  <select id="select1">
+  <option >choose difficulty</option>
+  <option value="easy"  class="easyy" onclick="randomeasy()">Easy</option>
+  <option value="mid"  class="midd" onclick="randommid()">Medium</option>
+  <option value="hard"  class="hardd" onclick="randomhard()">Hard</option>
+  </select>  
+  <select id="select2">
+  <option >Mode</option>
+  <option value="min"  class="minn">Timed (60s)</option>
+  <option value="pass"  class="passs">Passage</option>
+  </select>
+
+</div>
+
+
+<hr>
+<div class="dat">
+<div class="data-level" readonly></div>
+<div class="type" contenteditable="true"></div>
+<div class="started">
+  <button class="startedapp">Start Typing Test</button>
+  <h5>Or click the text and start typing</h5>
+</div>
+</div>
+<hr>
+<div class="res">
+  <button class="restart" onclick="location.reload();">restart 
+  <img src="assets/images/icon-restart.svg" width="13" height="13">
+  </button> 
+</div>
+ 
+<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/ameer-dev-A">Ameer</a>.
+  </div>
+</div>
+</div>
+<script src="typingspeedjs.js"></script>
+ 
+  
+</body>
+</html>
